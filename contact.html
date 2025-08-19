@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MouseL - Contact</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-blue-600">MouseL</h1>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-blue-600">Home</a>
+        <a href="product.html" class="hover:text-blue-600">Product</a>
+        <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Tentang -->
+  <section class="py-16 container mx-auto text-center">
+    <h2 class="text-3xl font-bold mb-6">Tentang Kami</h2>
+    <p class="max-w-2xl mx-auto text-gray-600">
+            MouseL is a trusted online mouse store that provides quality products. Customer satisfaction is our top priority.    </p>
+    <p class="mt-4 text-gray-600">
+      address: Jl. Kenari 4 No.123, Depok, Indonesia<br>
+      Telepon: (021) 123-4567<br>
+      Email: arsyatturabi@gmail.com
+    </p>
+  </section>
+
+  <!-- Form Kontak -->
+  <section class="py-12 container mx-auto">
+    <h3 class="text-2xl font-bold mb-6 text-center">Contact us</h3>
+    <form id="contactForm" class="max-w-lg mx-auto bg-white p-8 shadow-lg rounded-lg">
+      <div class="mb-4">
+        <label class="block mb-2 font-semibold">Name</label>
+        <input type="text" id="nama" class="w-full border rounded-lg p-2" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2 font-semibold">Email</label>
+        <input type="email" id="email" class="w-full border rounded-lg p-2" required>
+      </div>
+      <div class="mb-4">
+        <label class="block mb-2 font-semibold">Massage</label>
+        <textarea id="pesan" class="w-full border rounded-lg p-2" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-lg">Kirim</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-4">
+    <p>&copy; 2025 MouseL. All Rights Reserved.</p>
+    <div class="mt-4">
+      <a href="https://www.facebook.com/Tamzsyy?locale=id_ID" class="text-white hover:text-blue-400 mx-2">Facebook</a>
+      <a href="https://wa.me/6285846363646" class="text-white hover:text-blue-400 mx-2">whatsapp</a>
+      <a href="https://www.instagram.com/arrazwg/" class="text-white hover:text-blue-400 mx-2">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- Validasi Form -->
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert("Terima kasih, pesan Anda sudah terkirim!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>

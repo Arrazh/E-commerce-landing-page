@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MouseL - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animasi dasar */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-in-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold text-purple-600">MouseL</h1>
+      <nav class="space-x-6">
+        <a href="index.html" class="hover:text-purple-600">Home</a>
+        <a href="product.html" class="hover:text-purple-600">Product</a>
+        <a href="contact.html" class="hover:text-purple-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="bg-purple-600 text-white py-20 text-center fade-in">
+    <h2 class="text-4xl font-bold mb-4">Shop for the best, fastest, and safest mouse</h2>
+    <p class="mb-6">Find the best mouse products only at Mousel</p>
+    <a href="product.html" class="bg-white text-purple-600 px-6 py-3 rounded-lg font-semibold">See Products</a>
+  </section>
+
+  <!-- Highlight Produk -->
+  <section class="py-16 container mx-auto text-center">
+    <h3 class="text-3xl font-bold mb-8 fade-in">Recommendations</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white shadow-lg p-4 rounded-lg flex flex-col justify-between h-full fade-in">
+        <img src="assets/img/Ajazz_apex.png" alt="Produk 1" class="mx-auto rounded-lg mb-4 h-40 object-contain">
+        <h4 class="font-bold">Ajazz AJ159 AJ-159 APEX</h4>
+        <p class="text-gray-600 font-semibold">Rp 800.000</p>
+      </div>
+      <div class="bg-white shadow-lg p-4 rounded-lg flex flex-col justify-between h-full fade-in">
+        <img src="assets/img/GamenMaster.png" alt="Produk 2" class="mx-auto rounded-lg mb-4 h-40 object-contain">
+        <h4 class="font-bold">Gamen Master</h4>
+        <p class="text-gray-600 font-semibold">Rp 400.000</p>
+      </div>
+      <div class="bg-white shadow-lg p-4 rounded-lg flex flex-col justify-between h-full fade-in">
+        <img src="assets/img/Superlight.png" alt="Produk 3" class="mx-auto rounded-lg mb-4 h-40 object-contain">
+        <h4 class="font-bold">Logitech G PRO X SUPERLIGHT 2</h4>
+        <p class="text-gray-600 font-semibold">Rp 2.200.000</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-4 fade-in">
+    <p>&copy; 2025 MouseL. All Rights Reserved.</p>
+    <div class="mt-4">
+      <a href="https://www.facebook.com/Tamzsyy?locale=id_ID" class="text-white hover:text-blue-400 mx-2">Facebook</a>
+      <a href="https://wa.me/6285846363646" class="text-white hover:text-blue-400 mx-2">whatsapp</a>
+      <a href="https://www.instagram.com/arrazwg/" class="text-white hover:text-blue-400 mx-2">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- Script animasi -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+            } else {
+              entry.target.classList.remove("show"); // kalau mau sekali aja, hapus baris ini
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      document.querySelectorAll(".fade-in").forEach((el) => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
