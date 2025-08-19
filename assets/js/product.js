@@ -16,7 +16,7 @@ const products = [
     {
         id: 2,
         name: "Logitech G Pro X 2 Superlight",
-        price: 200,
+        price: 135,
         image: "assets/img/Superlight.png",
         description: "A new weapon of choice for the world's top esports athletes.",
         specs: [
