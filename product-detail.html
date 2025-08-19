@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Detail</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- Navbar -->
+  <header class="bg-blue-600 text-white p-4">
+    <nav class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">MouseL</h1>
+      <ul class="flex gap-6">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Konten -->
+  <main id="productDetail" class="flex-grow container mx-auto py-16"></main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-4">
+    <p>&copy; 2025 MouseL. All rights reserved.</p>
+    <div class="mt-4">
+      <a href="https://www.facebook.com/Tamzsyy?locale=id_ID" class="text-white hover:text-blue-400 mx-2">Facebook</a>
+      <a href="https://wa.me/6285846363646" class="text-white hover:text-blue-400 mx-2">WhatsApp</a>
+      <a href="https://www.instagram.com/arrazwg/" class="text-white hover:text-blue-400 mx-2">Instagram</a>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="assets/js/product.js"></script>
+  <script>
+    // Ambil ID dari URL
+    const params = new URLSearchParams(window.location.search);
+    const productId = parseInt(params.get("id"));
+
+    // Cari produk sesuai ID
+    const product = products.find(p => p.id === productId);
+
+    // Render detail produk
+    if (product) {
+      document.getElementById("productDetail").innerHTML = `
+        <div class="grid md:grid-cols-2 gap-12">
+        <div class="flex items-center justify-center">
+        <img src="${product.image}" alt="${product.name}" class="rounded shadow w-full max-w-lg">
+        </div>
+        <div>
+        <h2 class="text-3xl font-bold mb-4">${product.name}</h2>
+        <p class="text-gray-600 mb-4">${product.description}</p>
+        <p class="text-2xl font-semibold text-blue-600 mb-6">$${product.price}</p>
+        <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Add to Cart</button>
+        <div class="mt-8">
+        <h3 class="text-xl font-semibold mb-2">Specifications</h3>
+        <ul class="list-disc pl-6 text-gray-700">
+          ${product.specs.map(spec => `<li>${spec}</li>`).join("")}
+        </ul>
+      </div>
+    </div>
+  </div>
+`;
+    } else {
+      document.getElementById("productDetail").innerHTML = `<p class="text-center text-red-500">Product not found</p>`;
+    }
+  </script>
+</body>
+</html>
